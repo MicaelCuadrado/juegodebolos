@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+
+<!-- Mirrored from love.tsonit.com/juegodebolos by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Jul 2025 06:22:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>amor mio - LoveLoom</title>
+    <meta name="description" content="Hey there, I have a little something to share with you. It&#039;s just a small thing, but I hope it brightens your day a little. Come and see!">
+    <meta name="keywords" content="te amor,te quiero,mia,tuyo,juntos,amor,tuya,fiesta,baile,canto,leer,dormir,beso,bingo,rojo,azucar">
+    <meta property="og:title" content="amor mio - LoveLoom">
+    <meta property="og:description" content="Hey there, I have a little something to share with you. It&#039;s just a small thing, but I hope it brightens your day a little. Come and see!">
+    <meta property="og:image" content="assets/gacha/gacha.png">
+    <meta property="og:url" content="juegodebolos.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="love.png" sizes="16x16">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://kit.fontawesome.com https://cdnjs.cloudflare.com; img-src 'self' data: https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="bingbot" content="noindex, nofollow">
+    <link rel="stylesheet" href="../love.tsonit.com/assets/gacha/style.css">
+    <link rel="stylesheet" href="../love.tsonit.com/assets/gacha/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script src="https://love.tsonit.com/assets/gacha/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C01QH0Y269"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C01QH0Y269');
+</script>
+    <style>
+        body {
+            touch-action: manipulation;
+        }
+
+        .text-white {
+            color: #654321 !important;
+        }
+
+        .btn-audio-toggle {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+         .music-status {
+            display: flex;
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            z-index: 9999;
+            align-items: center;
+            font-family: sans-serif;
+            font-size: 14px;
+        }
+
+        .music-status .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #57162F;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+         @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .knob-graphics {
+            transform-origin: center;
+        }
+
+        @keyframes rotate-switch-animation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .switch.active .knob-graphics {
+            animation: rotate-switch-animation 0.6s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="music-loader" class="music-status">
+            <div class="spinner"></div>
+            <span>Loading data...</span>
+        </div>
+        <!-- Container cho sticky notes -->
+        <div class="sticky-notes-container"></div>
+
+        <div class="mask">
+            <div class="winner"></div>
+            <svg viewbox="0 0 439 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M295.5 14.0103C400.3 15.2103 429.167 117.51 430.5 168.51C338.1 208.51 207.667 185.177 154 168.51C157.5 116.51 190.7 12.8103 295.5 14.0103Z"
+                    fill="white" stroke="#531028" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path class="open-egg-color"
+                    d="M99.1013 198.787C-10.8987 165.987 1.26801 68.7865 21.1013 24.2865C152.701 -28.5135 247.268 59.6199 278.101 110.287C264.268 153.453 209.101 231.587 99.1013 198.787Z"
+                    fill="#F3D478"></path>
+                <path
+                    d="M21.1013 24.2865C1.26801 68.7865 -10.8987 165.987 99.1013 198.787C209.101 231.587 264.268 153.453 278.101 110.287M21.1013 24.2865C152.701 -28.5135 247.268 59.6199 278.101 110.287M21.1013 24.2865C44.6013 69.2865 128.901 149.487 278.101 110.287"
+                    stroke="#531028" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>
+
+        <div class="list-wrap">
+            <div class="list">
+                <ol></ol>
+            </div>
+        </div>
+
+        <div class="gachapon">
+            <div class="quantity-control">
+                <button id="decrease-btn" class="quantity-btn">-</button>
+                <input type="number" id="quantity-input" value="1" min="1" max="6" readonly>
+                <button id="increase-btn" class="quantity-btn">+</button>
+            </div>
+            <svg class="switch" viewBox="0 0 154 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <style>
+
+                </style>
+                <g class="knob-graphics">
+                    <circle cx="76.5828" cy="77.7004" r="43.5" transform="rotate(-45 76.5828 77.7004)"
+                        fill="#C6D2D5" stroke="#57162F" stroke-width="10"></circle>
+                    <path
+                        d="M32.7422 110.934C30.399 108.591 30.399 104.792 32.7422 102.449L101.732 33.4592C104.075 31.1161 107.874 31.1161 110.217 33.4592L120.117 43.3587C122.46 45.7018 122.46 49.5008 120.117 51.844L51.127 120.834C48.7838 123.177 44.9848 123.177 42.6417 120.834L32.7422 110.934Z"
+                        fill="#C6D2D5" stroke="#57162F" stroke-width="10"></path>
+                </g>
+            </svg>
+
+            <svg class="machine" viewbox="0 0 617 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <circle cx="308.5" cy="388.5" r="302" fill="#DEECF3" stroke="#5A1830" stroke-width="13">
+                </circle>
+                <path
+                    d="M308.5 5.14625C274.1 2.74625 257.833 30.4796 254 44.6462H361C357.833 32.4796 342.9 7.54625 308.5 5.14625Z"
+                    fill="#ed483e" stroke="#5A1832" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+
+                <path d="M105 902L112.5 646H511.5L519 894.5L105 902Z" fill="#ed483e" stroke="#57162F"
+                    stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path
+                    d="M517.219 611C345.719 677.5 173.552 639.5 101.219 611C88.219 623.5 102.552 645 111.219 647.5C354.219 724.5 490.719 656.5 517.219 639C538.419 625 526.052 614.5 517.219 611Z"
+                    fill="#ed483e" stroke="#57162F" stroke-width="10" stroke-linecap="round"
+                    stroke-linejoin="round">
+                </path>
+                <path
+                    d="M524.709 850.027C329.109 940.027 159.542 887.527 99.2088 850.027C71.2088 859.227 79.8755 895.194 87.7088 912.027C291.309 1022.43 476.875 958.027 544.209 912.027C549.009 860.827 533.209 849.36 524.709 850.027Z"
+                    fill="#ed483e" stroke="#57162F" stroke-width="10" stroke-linecap="round"
+                    stroke-linejoin="round">
+                </path>
+
+                <path
+                    d="M364.5 892.246C320.5 833.846 278.5 867.912 263 892.246V952.746C263 961.246 276.5 972.246 314 973.246C344 974.046 360.167 959.912 364.5 952.746V892.246Z"
+                    fill="#C7D2D5" stroke="#57162F" stroke-width="10" stroke-linecap="round"
+                    stroke-linejoin="round">
+                </path>
+                <g class="egg">
+                    <g class="egg-ball-svg">
+                        <circle class="egg-color" cx="313.5" cy="885.5" r="40.5" fill="#F3D478"
+                            stroke="#57172F" stroke-width="10">
+                        </circle>
+                        <ellipse rx="20.25" ry="7.29" cx="303.375" cy="871.825" fill="#9DCFE0"
+                            opacity="0.7"></ellipse>
+                    </g>
+                </g>
+
+                <!-- Khay chứa kẹo -->
+                <g class="candy-tray" transform="translate(0, 30)">
+                    <!-- Thanh gỗ ngang -->
+                    <rect x="50" y="1020" width="550" height="20" rx="10" ry="10"
+                        fill="#8B4513" stroke="#654321" stroke-width="3"></rect>
+                    <!-- Vạch gỗ giả -->
+                    <line x1="120" y1="1025" x2="120" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+                    <line x1="190" y1="1025" x2="190" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+                    <line x1="260" y1="1025" x2="260" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+                    <line x1="330" y1="1025" x2="330" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+                    <line x1="400" y1="1025" x2="400" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+                    <line x1="470" y1="1025" x2="470" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+                    <line x1="540" y1="1025" x2="540" y2="1035" stroke="#654321"
+                        stroke-width="1.5"></line>
+
+                    <!-- Group chứa các viên kẹo trong khay -->
+                    <g id="tray-candies"></g>
+                </g>
+
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M243.412 860.068C266.912 827.568 327.812 782.068 383.412 860.068V943.568C379.188 952.287 363.761 967.867 332.925 972.391C350.339 968.419 360.249 959.122 363.5 953.746V893.246C319.5 834.846 277.5 868.912 262 893.246V953.746C262 960.44 270.374 968.685 292.25 972.374C254.704 968.395 247.653 956.911 244.35 951.532C244.007 950.973 243.704 950.48 243.412 950.068C242.797 949.201 242.998 923.309 243.203 897.032C243.307 883.748 243.412 870.365 243.412 860.068Z"
+                    fill="#ed483e"></path>
+                <path
+                    d="M383.412 860.068H388.412C388.412 859.027 388.087 858.013 387.483 857.166L383.412 860.068ZM243.412 860.068L239.36 857.138C238.743 857.991 238.412 859.016 238.412 860.068H243.412ZM383.412 943.568L387.911 945.748C388.241 945.068 388.412 944.323 388.412 943.568H383.412ZM332.925 972.391L331.813 967.516C329.195 968.113 327.516 970.671 328.01 973.31C328.504 975.949 330.994 977.727 333.651 977.338L332.925 972.391ZM363.5 953.746L367.779 956.333C368.251 955.552 368.5 954.658 368.5 953.746H363.5ZM363.5 893.246H368.5C368.5 892.16 368.147 891.104 367.493 890.237L363.5 893.246ZM262 893.246L257.783 890.559C257.272 891.362 257 892.294 257 893.246H262ZM292.25 972.374L291.723 977.347C294.41 977.631 296.836 975.73 297.204 973.054C297.571 970.377 295.746 967.893 293.082 967.444L292.25 972.374ZM244.35 951.532L248.611 948.915L248.611 948.915L244.35 951.532ZM243.412 950.068L239.334 952.961L239.334 952.961L243.412 950.068ZM243.203 897.032L238.204 896.993L243.203 897.032ZM387.483 857.166C373.209 837.14 358.331 824.672 343.421 818.025C328.457 811.353 313.786 810.693 300.27 813.754C273.513 819.814 251.489 840.364 239.36 857.138L247.463 862.998C258.834 847.272 279.01 828.822 302.478 823.507C314.074 820.881 326.523 821.439 339.349 827.158C352.23 832.901 365.814 843.995 379.34 862.97L387.483 857.166ZM388.412 943.568V860.068H378.412V943.568H388.412ZM333.651 977.338C365.817 972.619 382.84 956.218 387.911 945.748L378.912 941.388C375.536 948.356 361.705 963.115 332.199 967.444L333.651 977.338ZM334.037 977.265C352.617 973.028 363.748 962.999 367.779 956.333L359.221 951.159C356.751 955.244 348.061 963.81 331.813 967.516L334.037 977.265ZM368.5 953.746V893.246H358.5V953.746H368.5ZM367.493 890.237C356.138 875.165 344.642 865.697 333.3 860.622C321.888 855.516 310.902 854.983 300.908 857.356C281.205 862.033 265.896 877.823 257.783 890.559L266.217 895.932C273.604 884.335 287.045 870.925 303.217 867.085C311.161 865.2 319.893 865.579 329.216 869.75C338.608 873.953 348.862 882.126 359.507 896.254L367.493 890.237ZM257 893.246V953.746H267V893.246H257ZM257 953.746C257 959.316 260.461 964.391 266.066 968.291C271.706 972.215 280.05 975.387 291.419 977.305L293.082 967.444C282.573 965.672 275.793 962.877 271.777 960.083C267.726 957.264 267 954.87 267 953.746H257ZM240.089 954.148C241.926 957.14 245.037 962.148 252.924 966.788C260.616 971.313 272.531 975.312 291.723 977.347L292.777 967.402C274.424 965.457 264.04 961.725 257.994 958.169C252.143 954.727 250.076 951.303 248.611 948.915L240.089 954.148ZM239.334 952.961C239.51 953.21 239.72 953.547 240.089 954.148L248.611 948.915C248.293 948.399 247.898 947.75 247.489 947.174L239.334 952.961ZM238.204 896.993C238.101 910.124 237.999 923.189 238 933.079C238 938.019 238.026 942.203 238.092 945.219C238.125 946.719 238.168 947.985 238.227 948.932C238.257 949.394 238.294 949.862 238.349 950.274C238.375 950.473 238.417 950.754 238.488 951.056C238.506 951.132 238.693 952.058 239.334 952.961L247.489 947.174C247.858 947.694 248.031 948.158 248.089 948.32C248.165 948.531 248.206 948.695 248.224 948.772C248.26 948.924 248.268 949.007 248.262 948.962C248.252 948.887 248.232 948.684 248.208 948.304C248.161 947.566 248.121 946.462 248.09 945.002C248.026 942.099 248 938.004 248 933.078C247.999 923.236 248.101 910.217 248.203 897.071L238.204 896.993ZM238.412 860.068C238.412 870.341 238.307 883.702 238.204 896.993L248.203 897.071C248.307 883.794 248.412 870.389 248.412 860.068H238.412Z"
+                    fill="#57162F"></path>
+                <path
+                    d="M234.569 45C154.169 61.4 136.736 111.167 138.069 134C289.669 155.6 427.236 143 477.069 134C486.669 79.2 418.069 51.8333 382.569 45H234.569Z"
+                    fill="#ed483e" stroke="#5A1730" stroke-width="10" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                <defs>
+                    <clippath id="candy-clip">
+                        <ellipse cx="308.5" cy="408.5" rx="260" ry="300"></ellipse>
+                    </clippath>
+                </defs>
+                <g id="balls-group" clip-path="url(#candy-clip)">
+                    <g id="balls-physics"></g>
+                </g>
+
+                <text x="308.5" y="115" font-family="White Pinky" font-size="50" fill="white" font-weight="bold"
+                    text-anchor="middle" letter-spacing="2">
+                    LoveLoom
+                </text>
+
+            </svg>
+        </div>
+        <button id="toggle-audio" class="text-white btn-audio-toggle"
+            style="position: absolute; top: 10px; right: 10px; z-index: 999;">
+            <i id="audio-icon" class="text-white  fa-solid fa-volume-high"></i>
+        </button>
+    </div>
+            
+    
+
+
+        <script>
+            window.dataGachaLoveLoom = {"template":"gacha","messages":{"default_candy_text":"Mystery Candy","error_not_enough_candy":"Not enough candy!\u003Cbr\/\u003EOnly :count remaining.","error_tray_full":"The tray is full!\u003Cbr\/\u003EPlease open or clear candies in the tray.","error_tray_not_enough_space":"Not enough space in the tray!\u003Cbr\/\u003EYou can only spin a maximum of :count more.","error_tray_not_enough_space_general":"Not enough space in the tray!"},"data":{"candyTexts":[{"text":"te amor","image":null},{"text":"te quiero","image":null},{"text":"mia","image":null},{"text":"tuyo","image":null},{"text":"juntos","image":null},{"text":"amor","image":null},{"text":"tuya","image":null},{"text":"fiesta","image":null},{"text":"baile","image":null},{"text":"canto","image":null},{"text":"leer","image":null},{"text":"dormir","image":null},{"text":"beso","image":null},{"text":"bingo","image":null},{"text":"rojo","image":null},{"text":"azucar","image":null}]},"musicConfig":{"type_music":"system","music_id":"musics\/CjfFFwHK4iTik1AjrDa33PT3waZm4Bv1qFreni4e.mp3","backgroundMusic":"\/storage\/musics\/CjfFFwHK4iTik1AjrDa33PT3waZm4Bv1qFreni4e.mp3"}};
+        </script>
+    
+    <script>
+        // --- MODULE QUẢN LÝ ÂM THANH ---
+        const musicManager = {
+            // Properties
+            audio: null,
+            state: 'idle', // idle, loading, ready, playing, paused, muted, error
+            tokenData: null,
+
+            // --- Core Functions ---
+            _setupAudio(sourceUrl = null) {
+                let audioSrc = sourceUrl || window.dataGachaLoveLoom?.musicConfig?.backgroundMusic;
+                if (!audioSrc) {
+                    audioSrc = '../love.tsonit.com/assets/gacha/sounds/Background.mp3';
+                }
+                this.audio = new Audio(audioSrc);
+                this.audio.loop = true;
+                this.audio.volume = 0.7;
+                this.attachEventListeners();
+                window.galaxyAudio = this.audio;
+                this.updateState('ready');
+            },
+
+            async init() {
+                // Đọc cấu hình nhạc từ đối tượng dataGachaLoveLoom
+                const musicConfig = window.dataGachaLoveLoom?.musicConfig;
+                this.updateState('loading');
+
+                // Xử lý trường hợp không có cấu hình nhạc -> dùng nhạc dự phòng
+                if (!musicConfig) {
+                    console.warn("Không tìm thấy musicConfig. Sử dụng nhạc hệ thống dự phòng.");
+                    this._setupAudio();
+                    return;
+                }
+
+                if (musicConfig.type_music === 'system') {
+                    this._setupAudio(); // Tạo audio ngay lập tức với nhạc hệ thống
+                } else if (musicConfig.type_music === 'zing' && musicConfig.music_id) {
+                    try {
+                        const res = await this.fetchWithAuth(`/get-song?id=${musicConfig.music_id}`);
+                        if (!res.ok) throw new Error(`Response not OK: ${res.status}`);
+                        const songInfo = await res.json();
+                        const mp3Url = songInfo.stream?.['128'];
+
+                        if (mp3Url) {
+                            // Tạo audio sau khi lấy link Zing thành công, truyền thẳng link vào
+                            this._setupAudio(mp3Url);
+                        } else {
+                            console.error('Không tìm thấy link MP3 128kbps, dùng nhạc dự phòng.');
+                            this._setupAudio(); // Lỗi -> Dùng nhạc dự phòng
+                        }
+                    } catch (error) {
+                        console.error('Lỗi khi lấy nhạc từ Zing:', error);
+                        this.updateState('error');
+                        this._setupAudio(); // Lỗi -> Dùng nhạc dự phòng
+                    }
+                } else {
+                    // Các trường hợp khác hoặc cấu hình sai -> dùng nhạc dự phòng
+                    this._setupAudio();
+                }
+            },
+
+            play() {
+                if (this.audio && this.audio.paused && this.state === 'ready') {
+                    this.audio.play().catch(e => {
+                        console.error("Lỗi khi phát nhạc:", e);
+                        this.updateState('error');
+                    });
+                }
+            },
+
+            togglePlayback() {
+                if (!this.audio || this.state === 'loading' || this.state === 'error') {
+                    console.warn("Nhạc chưa sẵn sàng hoặc đang lỗi.");
+                    return;
+                }
+
+                if (this.audio.paused) {
+                    this.audio.play();
+                } else {
+                    this.audio.pause();
+                }
+            },
+
+            // --- UI & State Management (Giữ nguyên) ---
+            updateState(newState) {
+                this.state = newState;
+                if (newState !== 'loading') {
+                    const loader = document.getElementById('music-loader');
+                    if (loader) loader.style.display = 'none';
+                }
+                this.updateUI();
+            },
+
+            updateUI() {
+                const audioIcon = document.getElementById('audio-icon');
+                if (!audioIcon) return;
+
+                if (!this.audio || this.audio.paused) {
+                    audioIcon.classList.remove("fa-volume-high");
+                    audioIcon.classList.add("fa-volume-xmark");
+                } else {
+                    audioIcon.classList.remove("fa-volume-xmark");
+                    audioIcon.classList.add("fa-volume-high");
+                }
+            },
+
+            attachEventListeners() {
+                if (!this.audio) return;
+                this.audio.onplay = () => this.updateState('playing');
+                this.audio.onpause = () => this.updateState('paused');
+                this.audio.onvolumechange = () => this.updateUI();
+            },
+
+            // Các hàm fetchWithAuth và getToken giữ nguyên...
+            async getToken() {
+                try {
+                    const res = await fetch('/token-api-mp3');
+                    if (!res.ok) throw new Error('Không lấy được token');
+                    const data = await res.json();
+                    this.tokenData = data;
+                    return this.tokenData;
+                } catch (err) {
+                    console.error('Lỗi lấy token:', err);
+                    return null;
+                }
+            },
+            async fetchWithAuth(url) {
+                await this.getToken();
+
+                if (!this.tokenData) throw new Error('Không có token xác thực');
+
+                const headers = {
+                    'X-Auth-Token': this.tokenData.token,
+                    'X-Auth-Timestamp': this.tokenData.timestamp,
+                    'X-Client-Key': this.tokenData.clientKey,
+                    'X-Auth-Nonce': this.tokenData.nonce,
+                };
+
+                let res = await fetch(url, {
+                    headers
+                });
+
+                if (!res.ok) {
+                    const errorText = await res.text();
+                    console.error(`Lỗi response (${res.status}):`, errorText);
+                    if (res.status === 403) {
+                        await this.getToken();
+                        if (!this.tokenData) throw new Error('Không có token xác thực');
+
+                        const newHeaders = {
+                            'X-Auth-Token': this.tokenData.token,
+                            'X-Auth-Timestamp': this.tokenData.timestamp,
+                            'X-Client-Key': this.tokenData.clientKey,
+                            'X-Auth-Nonce': this.tokenData.nonce,
+                        };
+
+                        res = await fetch(url, {
+                            headers: newHeaders
+                        });
+
+                        if (!res.ok) {
+                            const errText = await res.text();
+                            throw new Error(`Request lỗi sau khi refresh token: ${res.status}`);
+                        }
+                    } else {
+                        throw new Error(`Request lỗi: ${res.status}`);
+                    }
+                }
+
+                return res;
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.musicManager = musicManager;
+            musicManager.init();
+
+            const toggleBtn = document.getElementById("toggle-audio");
+            toggleBtn.addEventListener("click", () => musicManager.togglePlayback());
+        });
+    </script>
+    <script src="../love.tsonit.com/assets/gacha/script.js?v=1752387758"></script>
+             <script>
+            // Chặn chuột phải
+            // document.addEventListener("contextmenu", function(e) {
+            //     e.preventDefault();
+            // });
+
+            // Chặn F12, Ctrl+U, Ctrl+Shift+I/J/C/S, Cmd+Opt+I (Mac)
+            // document.addEventListener("keydown", function(e) {
+            //     if (
+            //         e.key === "F12" ||
+            //         (e.ctrlKey && e.shiftKey && ["i", "j", "c", "s"].includes(e.key.toLowerCase())) ||
+            //         (e.ctrlKey && e.key.toLowerCase() === "u") ||
+            //         (e.metaKey && e.altKey && e.key.toLowerCase() === "i") || // Cmd + Opt + I
+            //         (e.metaKey && e.key.toLowerCase() === "u") // Cmd + U
+            //     ) {
+            //         e.preventDefault();
+            //         return false;
+            //     }
+            // });
+
+            // Xóa console methods
+            // console.log = () => {};
+            // console.debug = () => {};
+            // console.warn = () => {};
+            // console.info = () => {};
+
+            // Phát hiện DevTools bằng thời gian thực thi debugger
+            // setInterval(() => {
+            //     const before = new Date().getTime();
+            //     debugger;
+            //     const after = new Date().getTime();
+            //     if (after - before > 100) {
+            //         document.body.innerHTML =
+            //             '<h1 style="text-align:center;margin-top:100px;color:red">🔒 Bạn đang cố mở Developer Tools!</h1>';
+            //     }
+            // }, 1000);
+
+            // Phát hiện DevTools qua kích thước cửa sổ
+            // function detectDevToolsSize() {
+            //     if (
+            //         window.outerWidth - window.innerWidth > 160 ||
+            //         window.outerHeight - window.innerHeight > 160
+            //     ) {
+            //         document.body.innerHTML = '<h1 style="text-align:center;margin-top:100px;color:red">🔒 Developer Tools bị phát hiện!</h1>';
+            //     }
+            // }
+            // window.onresize = detectDevToolsSize;
+            // window.onload = detectDevToolsSize;
+
+            // Phát hiện mở console qua toString tampering
+            // (function() {
+            //     const element = new Image();
+            //     Object.defineProperty(element, 'id', {
+            //         get: function() {
+            //             document.body.innerHTML =
+            //                 '<h1 style="text-align:center;margin-top:100px;color:red">⚠️ Đừng mở console!</h1>';
+            //             throw new Error("Console is blocked");
+            //         }
+            //     });
+
+            //     setInterval(() => {
+            //         console.log(element);
+            //         console.clear();
+            //     }, 2000);
+            // })();
+
+            // // Ngăn inspect element qua mouse drag
+            // document.addEventListener('dragstart', function(e) {
+            //     e.preventDefault();
+            // });
+
+            // Ngăn chọn toàn bộ (Ctrl+A)
+            // document.addEventListener('keydown', function(e) {
+            //     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'a') {
+            //         e.preventDefault();
+            //     }
+            // });
+        </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"dbcd8856a1a842ceb5c3d63534a9f51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+
+<!-- Mirrored from love.tsonit.com/juegodebolos by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 13 Jul 2025 06:22:43 GMT -->
+</html>
